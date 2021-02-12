@@ -17,19 +17,25 @@ body {
     background: #e31f3a;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    padding: 50px 123px;
+    margin: 0 10%;
+    height: 133px;
+    justify-content: space-between;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    margin-left: 58.5%;
+}
+
+.nav-item li {
+    list-style: none;
+    float: left;
 }
 
 .nav-btn {
@@ -67,16 +73,24 @@ body {
     background: #333;
     box-shadow: 0 1px 5px 4px rgba(255, 255, 255, 0.4);
     padding: 15px;
-    z-index: 1;
+    z-index: 2;
     text-shadow: 0 2px 5px black;
-    /* background: linear-gradient(to top, #696969, #2c2c2c);
-    border-radius: 7px;
-    box-shadow: inset 0 20px 4px -19px rgba(255, 255, 255, 0.4), 0 12px 12px 0 rgba(0, 0, 0, 0.3);; */
 }
 
 .subnav:hover .subnav-content{
     display: flex;
 }
+
+.hide-menu-btn i, .menu-btn i {
+    color: #fff;
+    font-size: 35px;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
 
 
 /* Carousel */
@@ -96,7 +110,7 @@ input {
     opacity: 0;
 }
 
-label {
+.carousel label {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -139,7 +153,6 @@ input:checked + label {
     opacity: 1;
     display: none;
 }
-
 
 .slide-content button {
     background-color: transparent;
@@ -239,6 +252,7 @@ input:checked + label + .slide {
 .about {
     background: #e31f3a;
     text-align: center;
+    height: 900px;
 }
 
 .about-content {
@@ -364,6 +378,9 @@ input:checked + label + .slide {
         width: 70%;
         margin-left: 15%;
     }
+    .content {
+        margin: 0 9% 3% 10%;
+    }
     .about-title {
         font-size: 2rem;
     }
@@ -377,20 +394,21 @@ input:checked + label + .slide {
         font-size: 1rem;
     }
     .about-left, .about-right {
-        width: 70%;
+        width: 100%;
     }
     
     .about-right {
         margin-left: 0;
     }
     .about {
-        height: 1300px;
+        height: 1100px;
     }
     .about-image {
         transform: translateX(0);
     }
     .about-image button {
-        transform: translateX(12px) translateY(210px); 
+        transform: translateX(80%) translateY(210px); 
+        width: auto;
     }
     .image {
         clip: rect(23px, 528px, 305px, 0);
@@ -403,7 +421,7 @@ input:checked + label + .slide {
         display: flex;
     }
     .copyright {
-        margin: 45px 10px 20px 50px;
+        margin: 45px 10px 20px 0px;
         width: 150px;
     }
     .footer-icon {
@@ -413,27 +431,43 @@ input:checked + label + .slide {
     .footer-logo {
         margin-left: 35%;
     }
-    
+
+    .menu-btn i {
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before {
+        content: "";
+    }
+
+    .navbar ul {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        transition: all 0.4s ease;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    #click:checked ~ ul {
+        left: 0;
+    }
+
+    #click:checked {
+        background: none;
+    }  
+
+   
 }
 
 @media screen and (max-width: 768px) {
     .about {
-        height: 1400px;
+        height: 1350px;
     }
     .about-image button {
-        transform: translateX(35px) translateY(270px);         
-    }
-    .footer-logo {
-        margin-left: 15%;
-    }
-}
-
-@media screen and (min-width:375px) {
-    .about {
-        height: 1650px;
-    }
-    .about-image button {
-        transform: translateX(25px) translateY(220px);         
+        transform: translateX(55%) translateY(190px);         
     }
     .footer-logo {
         margin-left: 0;
@@ -442,4 +476,12 @@ input:checked + label + .slide {
         margin-right: 0;
         width: 100px;
     }
+    .image {
+        clip: rect(12px, 400px, 305px, 0px);
+    }
+    .nav-btn {
+        width: auto;
+    } 
+
 }
+
