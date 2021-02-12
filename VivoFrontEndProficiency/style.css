@@ -358,6 +358,35 @@ input:checked + label + .slide {
     margin: 35px 0 20px 66%;
 }
 
+@media screen and (max-width: 1200px) {
+    .about-row {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+    }
+    .about-left, .about-right {
+        width: 100%;
+    }
+    .about-right {
+        margin-left: 0;
+    }
+    .about {
+        height: 1100px;
+    }
+    .about-image button {
+        transform: translateX(10%) translateY(280px); 
+        width: 70%;
+    }
+    .image {
+        clip: rect(23px, 750px, 400px, 0);
+        transform: translateY(-15px);
+    }
+}
+
 
 @media screen and (max-width: 1000px) {
     .first {
@@ -379,41 +408,15 @@ input:checked + label + .slide {
         margin-left: 15%;
     }
     .content {
-        margin: 0 9% 3% 10%;
+        margin-top: 10%;
     }
     .about-title {
         font-size: 2rem;
-    }
-    .about-row {
-        margin-top: 2%;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
-    }
-    .about-left, .about-right {
-        width: 100%;
-    }
-    
-    .about-right {
-        margin-left: 0;
-    }
-    .about {
-        height: 1100px;
-    }
+    } 
     .about-image {
         transform: translateX(0);
     }
-    .about-image button {
-        transform: translateX(80%) translateY(210px); 
-        width: auto;
-    }
-    .image {
-        clip: rect(23px, 528px, 305px, 0);
-        transform: translateY(-15px);
-    }
+    
     .footer {
         font-size: 0.6rem;
     }
@@ -458,7 +461,14 @@ input:checked + label + .slide {
     #click:checked {
         background: none;
     }  
-
+    .about-image button {
+        transform: translateX(25%) translateY(210px); 
+        width: 60%;
+    }
+    .image {
+        clip: rect(23px, 610px, 305px, 0);
+        transform: translateY(-15px);
+    }
    
 }
 
@@ -467,7 +477,8 @@ input:checked + label + .slide {
         height: 1350px;
     }
     .about-image button {
-        transform: translateX(55%) translateY(190px);         
+        transform: translateX(55%) translateY(190px);  
+        width: auto;       
     }
     .footer-logo {
         margin-left: 0;
@@ -482,6 +493,9 @@ input:checked + label + .slide {
     .nav-btn {
         width: auto;
     } 
+    .content {
+        margin-top: 15%;
+    }
 
 }
 
